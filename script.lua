@@ -120,10 +120,8 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Bait List"] = {
         ["Auto Buying"] = true,
         ["Buy List"] = {
-            "Midnight Bait",
-            "Chroma Bait",
-            "Corrupt Bait",
-            "Aether Bait",
+            "Midnight Bait",            
+            "Corrupt Bait",          
             "Singularity Bait",
         },
         ["Endgame"] = "Singularity Bait",
@@ -131,11 +129,8 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Rod List"] = {
         ["Auto Buying"] = true,
         ["Buy List"] = {
-            "Grass Rod",
             "Midnight Rod",
             "Astral Rod",
-            "Ares Rod",
-            "",
         },
         ["Location Rods"] = {
             ["Fisherman Island"] = {"Starter Rod"},
