@@ -150,7 +150,7 @@ _G.FishItConfig = _G.FishItConfig or {
     "place_id": 4483381587,
     "api_base_url": "https://apiweb.wintercode.dev",
     "solve_pow": true,
-    "solve_captcha": true
+    "solve_captcha": true,
 },
 
     ["ExtremeFpsBoost"] = false,
