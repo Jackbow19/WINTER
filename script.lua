@@ -141,6 +141,17 @@ _G.FishItConfig = _G.FishItConfig or {
         },
         ["Endgame"] = "",
     },
+    {
+    "loop": true,
+    "delay_minutes": 10,
+    "delay_per_cookie": 5,
+    "max_workers": 5,
+    "api_key": "b8b9ac065277284bd5703b2f02a9eb4b565c86628276c4e073f03acd6a23b7b1",
+    "place_id": 4483381587,
+    "api_base_url": "https://apiweb.wintercode.dev",
+    "solve_pow": true,
+    "solve_captcha": true
+},
 
     ["ExtremeFpsBoost"] = false,
     ["UltimatePerformance"] = false,
