@@ -9,7 +9,7 @@ _G.GAGConfig = _G.GAGConfig or {
         -- Plant Plan: how many of each seed to keep planted.
         --   EMPTY {} = auto — the farm plants the best seeds it can afford.
         --   FILLED   = plant up to those amounts, then auto-fill the rest. e.g. { Apple = 50, Strawberry = 50 }
-        ["Plant Plan"]  = {},
+        ["Plant Plan"]  = {compact},
         -- Layout: how the crop is arranged.
         --   "compact" = pack all plants into one tight patch so a few sprinklers cover EVERY plant (best — turns
         --               sprinklers into a whole-farm multiplier). [recommended]
