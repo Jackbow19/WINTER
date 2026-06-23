@@ -1,99 +1,191 @@
-_G.GAGConfig = _G.GAGConfig or {
-    ["Harvest"] = {
-        ["Sell At"]       = 80,      -- sell once your backpack holds this many fruit
-        ["Sell Every"]    = 30,      -- also sell every N seconds while holding fruit (steady cash); 0 = off
-        ["Only Harvest"]  = {},      -- if set, harvest ONLY these. e.g. { Watermelon = true }
-        ["Don't Harvest"] = {},      -- never harvest these (leave them growing). e.g. { Carrot = true }
+getgenv().Config = {
+
+  --////////////////////////////////////////////////////
+  -- CORE FARM FEATURES (MAIN LOOP SYSTEMS)
+  --////////////////////////////////////////////////////
+  ["Main Features"] = {
+    ["Auto Plant"] = true, -- automatically plants seeds based on Seeds To Plant
+    ["Auto Sell"] = true, -- auto sells harvested fruits after timer / capacity
+    ["Auto Buy Seed"] = true, -- buys seeds from shop automatically
+    ["Auto Buy Gear"] = true, -- buys tools like sprinklers, cans, etc
+    ["Auto Use Gear"] = true -- automatically equips/uses bought gear
+  },
+
+  ["Auto Expand Garden"] = true, -- expands plot when conditions are met
+
+  --////////////////////////////////////////////////////
+  -- PERFORMANCE / FPS CONTROL
+  --////////////////////////////////////////////////////
+  ["Optimization"] = {
+    ["Workspace Cleaner"] = true, -- removes unnecessary parts for better performance
+    ["Black Screen"] = false, -- disables rendering for performance boost
+    ["FPS Cap"] = 60, -- sets max FPS (60 recommended)
+    ["Auto Set FPS"] = true, -- auto adjusts FPS cap based on device
+    -- true = PC/Windows recommended
+    -- false = emulator/mobile optimization
+  },
+  --////////////////////////////////////////////////////
+  -- SECONDARY SYSTEMS (PET / UTILITY / QUALITY OF LIFE)
+  --////////////////////////////////////////////////////
+  ["Other Features"] = {
+    ["Auto Shovel"] = true, -- removes unwanted plants automatically
+    ["Auto Catch Pet"] = true, -- auto catches new pets spawned in world
+    ["Auto Equip Pets"] = true, -- equips best pets automatically
+    ["Auto Optimize Pets"] = true, -- optimizes pet stats/loadout
+    ["Auto Upgrade Pet Slots"] = true, -- increases pet capacity automatically
+    ["Auto Tutorial"] = true -- skips or completes tutorial steps
+  },
+
+  --////////////////////////////////////////////////////
+  -- CODE SYSTEM
+  --////////////////////////////////////////////////////
+  ["Codes"] = {
+    ["Auto Redeem Codes"] = true, -- automatically redeems all codes listed
+    ["Codes To Redeem"] = {
+      "TEAMGREENBEAN",
+    }
+  },
+
+  --////////////////////////////////////////////////////
+  -- FARMING BEHAVIOR SETTINGS
+  --////////////////////////////////////////////////////
+  ["Auto Pickup Mutation Seeds"] = true, -- picks special mutation seeds instantly
+  ["Teleport To Seed Packs"] = true, -- teleports to seed pack drops
+  ["Auto Plant Mutation Seeds"] = true, -- enables planting rare mutation seeds
+
+  ["Sell After"] = 30, -- seconds before selling harvested items
+
+  ["Mutation Seeds To Plant"] = {}, -- whitelist for mutation planting
+  ["Gear To Buy"] = {}, -- custom gear whitelist
+
+  --////////////////////////////////////////////////////
+  -- PET SYSTEM (BUY / EQUIP / PRIORITY)
+  --////////////////////////////////////////////////////
+  ["Buy Pets"] = {
+    ["Monkey"] = 99,
+    ["Bee"] = 99,
+    ["BlackDragon"] = 99,
+    ["GoldenDragonfly"] = 99,
+    ["Unicorn"] = 99,
+    ["Raccoon"] = 99,
+    ["IceSerpent"] = 99,
+    ["Robin"] = 5,
+    ["Deer"] = 5,
+  },
+
+  ["Equip Pets"] = {
+    {"Unicorn", 5, 1}, -- name, amount to equip, priority (higher = more important)
+    {"GoldenDragonfly", 10, 2},
+    {"Robin", 5, 3},
+    {"Deer", 5, 4},
+  },
+
+  --////////////////////////////////////////////////////
+  -- GEAR SYSTEM (BUY + USAGE PRIORITY)
+  --////////////////////////////////////////////////////
+  ["Buy Gears"] = {
+    ["Super Watering Can"] = 9999,
+    ["Super Sprinkler"] = 9999,
+  },
+
+  ["Use Sprinkler"] = {
+    "Super Sprinkler",
+    "Legendary Sprinkler",
+    "Rare Sprinkler",
+    "Uncommon Sprinkler",
+    "Common Sprinkler",
+  },
+
+  --////////////////////////////////////////////////////
+  -- PLANT COLLECTION SETTINGS
+  --////////////////////////////////////////////////////
+  ["Collect Mutated Plants"] = {
+    "Bamboo",
+    "Mushroom",
+    "Green Bean"
+  },
+
+  ["Seeds To Plant"] = {
+    ["Carrot"] = 15,
+    ["Strawberry"] = 15,
+    ["Blueberry"] = 15,
+    ["Tulip"] = 15,
+    ["Tomato"] = 15,
+    ["Apple"] = 15,
+    ["Corn"] = 15,
+
+    ["Bamboo"] = 30,
+    ["Mushroom"] = 30,
+    ["Cactus"] = 30,
+    ["Pineapple"] = 30,
+    ["Green Bean"] = 30,
+    ["Banana"] = 30,
+    ["Grape"] = 30,
+    ["Coconut"] = 30,
+    ["Mango"] = 30,
+    ["Dragon Fruit"] = 30,
+    ["Acorn"] = 30,
+    ["Cherry"] = 30,
+    ["Sunflower"] = 30,
+  },
+
+  ["Buy Seeds"] = {}, -- optional whitelist override
+
+  --////////////////////////////////////////////////////
+  -- GARDEN UPGRADES
+  --////////////////////////////////////////////////////
+  ["Expand Plot"] = 4, -- number of plots to expand at once
+  ["Max Pet Slots"] = 6, -- 0 = base (3 slots), +1 = 4 slots, etc
+
+  --////////////////////////////////////////////////////
+  -- WEBHOOK SYSTEM (NOTIFICATIONS)
+  --////////////////////////////////////////////////////
+  ["Pet Catch Webhook"] = {
+    Enabled = true,
+    Url = "",
+    Note = "Gag2",
+    Mention = "@everyone Found: "
+  },
+
+  ["Seed Pack Webhook"] = {
+    Enabled = true,
+    Url = "",
+    Note = "Gag2"
+  },
+
+  --////////////////////////////////////////////////////
+  -- SMART DAILY DEAL SYSTEM
+  --////////////////////////////////////////////////////
+
+  ["Smart Daily Deal"] = {
+    ["Enabled"] = true, -- enables automatic Daily Deal handling
+    ["Fruit Amount"] = 10, -- minimum amount of a fruit to keep before donating extras
+    ["Fruits"] = { -- fruits allowed to be used for Daily Deals
+      "Carrot"
+    }
+  },
+  
+  --////////////////////////////////////////////////////
+  -- MAIL SYSTEM (ITEM TRANSFER)
+  --////////////////////////////////////////////////////
+
+  -- Example:
+  --[[
+  ["your username"] = {
+    Note = "gift",
+    Items = {
+      "Golden Dragonfly",
+      "Unicorn",
+      "Raccoon",
     },
-    ["Planting"] = {
-        -- Plant Plan: how many of each seed to keep planted.
-        --   EMPTY {} = auto — the farm plants the best seeds it can afford.
-        --   FILLED   = plant up to those amounts, then auto-fill the rest. e.g. { Apple = 50, Strawberry = 50 }
-        ["Plant Plan"]  = {},
-        -- Layout: how the crop is arranged.
-        --   "compact" = pack all plants into one tight patch so a few sprinklers cover EVERY plant (best — turns
-        --               sprinklers into a whole-farm multiplier). [recommended]
-        --   "spread"  = spread plants across the whole plot.
-        ["Layout"]      = "compact",
-        ["Don't Plant"] = {},        -- never plant these. e.g. { Carrot = true }
-        ["Don't Buy"]   = {},        -- never spend money BUYING these seeds (the farm still plants any you already own; add to Don't Plant too if you never want them grown). e.g. { Mango = true }
-        -- Keep Seeds: keep this many of a seed UNPLANTED (saved, never planted). Defaults save the rare super seeds
-        -- (Dragon's Breath / Moon Bloom) + every event seed. Remove one to plant it instead.
-        ["Keep Seeds"] = {
-            ["Dragon's Breath"] = 5, ["Moon Bloom"] = 5,                                  -- rare super seeds (high resale)
-            ["Gold"] = 5, ["Rainbow"] = 5,      -- event seeds
-        },
-    },
-    ["Money"] = {
-        ["Keep Cash"]          = 15000,    -- always keep at least this much money
-        ["Auto Expand Plot"]   = true,     -- buy plot expansions automatically
-        ["Max Expansions"]     = 3,        -- cap how many expansions to auto-BUY this run. 0 = no limit; default 3 = stop after 3 (raise for a bigger plot)
-        ["Expand If Over"]     = 1500000,  -- only spend on an expansion when your cash is above this
-        ["Auto Replace Plants"] = true,    -- when the plot is full, dig up low-value plants and plant better ones
-    },
-    ["Never Sell"] = {               -- protect favourite fruit from being sold (keep only a few trophies — they fill your bag)
-        ["By Mutation"] = {},        -- keep any fruit with this mutation.  e.g. { Rainbow = true, Gold = true }
-        ["By Fruit"]    = {},        -- keep this fruit, any mutation.       e.g. { ["Dragon Fruit"] = true }
-        ["Exact"]       = {},        -- keep one exact fruit+mutation.       e.g. { { fruit = "Carrot", mut = "Gold" } }
-    },
-    ["Pets"] = {                     -- auto-buy wild pets + equip your best loadout
-        ["Buy"]   = { Unicorn = true, GoldenDragonfly = true, Deer = true, Robin = true, Raccoon = true },   -- Unicorn 2x Rainbow / GoldenDragonfly 2x Gold / Deer growth / Robin drops seeds
-        ["Equip"] = { Unicorn = 1, GoldenDragonfly = 1, Deer = 4 },   -- the pets to keep equipped (auto-equips the ones you own)
-        ["Auto Buy Slots"] = true,   -- automatically buy extra pet slots (3 -> 6, costs 200k/1M/5M) to fit your Equip loadout
-        ["Max Pet Slots"]  = 6,      -- never buy past this many slots (3-6). lower = stop earlier / spend less (6 = full)
-    },
-    ["Gear"] = {
-        ["Auto Buy"]           = true,             -- master on/off for buying & placing gear below
-        ["Keep Cash"]          = 15000,            -- only spend on gear when your cash is above this
-        ["Sprinkler Coverage"] = "concentrate",    -- where sprinklers go: "concentrate" (on your best plants) / "value" / "spread"
-        -- Place Sprinklers: which sprinklers to keep placed. "best" (recommended) = automatically buy & place the
-        --   best one IN STOCK you can afford (up to the limit below), switching between Common/Uncommon/Rare as the
-        --   shop restocks. Or name exact tiers, e.g. { ["Common Sprinkler"]=2, ["Rare Sprinkler"]=2 } (but that only
-        --   buys a tier when THAT exact one is in stock).
-        ["Place Sprinklers"] = { ["best"] = 4 },
-        -- Best Sprinkler Up To: when using "best", never auto-place above this tier — so your valuable Super /
-        --   Legendary sprinklers are kept to SELL instead of being used up. (Rare and below are cheap.)
-        ["Best Sprinkler Up To"] = "Rare Sprinkler",
-        ["Keep Gear"] = { ["Supersize Mushroom"] = 1 },   -- gear to buy & keep on hand (Supersize Mushroom = bigger fruit)
-        ["Buy Gear"]  = {},   -- extra gear to grab whenever in stock. (Sprinklers are NOT here: Place buys one on-demand right before placing, so none sit unused in your bag.) e.g. { ["Trowel"] = true }
-    },
-    ["Event Seeds"] = {
-        ["Auto Claim"] = true,       -- automatically grab seed packs that drop during events
-    },
-    ["Mail"] = {
-        ["Auto Claim"] = true,       -- automatically claim items sent to your mailbox (free items / gifts)
-        -- AUTO-SEND: mail items to another account automatically (e.g. funnel an alt -> your main). You can send
-        -- seeds / gear / pets — NOT fruit (fruit can't be mailed). ⚠️ this GIVES ITEMS AWAY for real.
-        ["Send To"] = "",            -- the username to send to. BLANK = sending OFF.
-        -- Send: items to keep sending. Category = inventory tab (Seeds / Sprinklers / Pets / Mushrooms / ...);
-        -- Item = the in-game item name. Count = how many (or "all" / omit = send everything you have).
-        -- PETS have no stack count — omit Count to send all spare ones, or set N for that many; your EQUIPPED
-        -- pets are NEVER sent.
-        ["Send"] = {
-            -- { Category = "Seeds", Item = "Moon Bloom" },              -- send all Moon Bloom seeds
-            -- { Category = "Pets",  Item = "Deer" },                    -- send all spare (unequipped) Deer
-            -- { Category = "Sprinklers", Item = "Super Sprinkler", Count = 1 },
-        },
-    },
-    ["Misc"] = {
-        ["Auto Return To Garden"] = true,   -- if you get teleported/stuck far away, automatically return to your garden
-        ["Show Stats"]            = true,   -- show the on-screen farm-stats panel (bottom-left corner)
-        ["Smart Travel"]          = true,   -- to reach a FAR pet/seed, teleport to the nearest hub (Seeds/Sell/Garden) first, then walk
-    },
-    ["Performance"] = {
-        -- LOW-RESOURCE MODE for weak PCs. Low Graphics + Remove Other Gardens only change VISUALS — never the farming
-        -- (server-side remotes). FPS Cap is different — it's ALSO the farm's logic rate, so pick what suits you.
-        ["FPS Cap"]      = 5,    -- frame rate cap = ALSO the farm's logic/movement rate, so LOW = slow + choppy farm
-                                  -- (not just visuals); high = snappier. Set whatever fps you want; 0 = uncapped. The
-                                  -- savings are Low Graphics + Remove Other Gardens below (they cut per-frame work so
-                                  -- a high fps stays cheap, since 3D rendering's already off via Show Stats).
-        ["Low Graphics"] = true,   -- drop render quality to the minimum (textures/shadows/effects) — saves GPU & memory.
-        ["Remove Other Gardens"] = true,   -- (needs Low Graphics on) delete OTHER players' gardens locally = big memory save, but you won't see neighbors. false = keep them visible.
-        ["Hide Crop Visuals"] = true,     -- make YOUR OWN plants invisible — the biggest GPU saver when you watch the bot (they still grow + get harvested normally, you just won't see them). great for weak PCs. false = see your crop.
-    },
+  },
+  ]]
+
+  ["Auto Send Mail"] = false, -- Automatically sends configured items
+
+  ["Mail To Send"] = {
+    -- Add players here using the example above
+  },
 }
 
-
-script_key="137426E4B43E92D492B5374496B76A25"
-
-local s,r repeat s,r=pcall(function()return game:HttpGet("https://raw.githubusercontent.com/FnDXueyi/roblog/refs/heads/main/gag-obfuscated.lua")end)wait(1)until s;loadstring(r)()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/refs/heads/main/Kaitun/Grow%20A%20Garden%202", true))()
