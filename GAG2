@@ -90,7 +90,7 @@ _G.GAGConfig = {
     },
 
     Performance = {
-        ["FPS Cap"] = 5,
+        ["FPS Cap"] = 60,
         ["Low Graphics"] = true,
         ["Remove Other Gardens"] = true,
     }
