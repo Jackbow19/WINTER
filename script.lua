@@ -40,7 +40,7 @@ _G.FishItConfig = _G.FishItConfig or {
     },
     ["Doing Quest"] = {
         ["Auto Ghostfinn Rod"] = true,
-        ["Auto Element Rod"] = false,
+        ["Auto Element Rod"] = true,
         ["Unlock Ancient Ruin"] = false,
         ["Allowed Sacrifice"] = {
             "Ghost Shark",
@@ -52,7 +52,7 @@ _G.FishItConfig = _G.FishItConfig or {
             "Blob Shark",
             "Ghost Shark",
         },
-        ["FARM_LOC_SECRET_SACRIFICE"] = "Sisyphus Statue",
+        ["FARM_LOC_SECRET_SACRIFICE"] = "Treasure Room",
 
         ["Minimum Rod"] = "Astral Rod",
     },
@@ -105,15 +105,21 @@ _G.FishItConfig = _G.FishItConfig or {
             "Mutation Hunter II",
             "Leprechaun II",
         },
-        ["Second Enchant"] = false,
+        ["Second Enchant"] = true,
         ["Allowed Sacrifice"] = {
-            "Frostborn Shark",
+            "Ghost Shark",
             "Cryoshade Glider",
+            "Panther Eel",
+            "Queen Crab",
+            "King Crab",
+            "Giant Squid",
+            "Blob Shark",
+            "Ghost Shark",
         },
         ["Second Enchant List"] = {
-            "Reeler I",
-            "Prismatic I",
             "Mutation Hunter II",
+            "Cursed I",
+            "Prismatic I",
         },
         ["Minimum Rod"] = "Ghostfinn Rod",
     },
