@@ -103,13 +103,13 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Enchant"] = {
         ["Auto Enchant"] = true,
         ["Roll Enchant"] = true, -- true = Roll until get TOP 1 enchant only (first in list)
-        ["Evolved Roll Enchant"] = false, -- true = Roll Evolved Stone until get ANY evolved-only enchant from list, then fallback to regular stone
+        ["Evolved Roll Enchant"] = true, -- true = Roll Evolved Stone until get ANY evolved-only enchant from list, then fallback to regular stone
         ["Enchant List"] = {
-            "Cursed I",
             "SECRET Hunter",
             "Mutation Hunter III",
-            "Prismatic I",
             "Mutation Hunter II",
+            "Prismatic I",
+            "Cursed I",
             "Leprechaun II",
         },
         ["Second Enchant"] = true,
@@ -131,8 +131,9 @@ _G.FishItConfig = _G.FishItConfig or {
         },
         ["Second Enchant List"] = {
             "Mutation Hunter II",
-            "Cursed I",
             "Prismatic I",
+            "Cursed I",
+            
         },
         ["Minimum Rod"] = "Ghostfinn Rod",
     },
