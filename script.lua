@@ -62,7 +62,7 @@ _G.FishItConfig = _G.FishItConfig or {
             "Mosasaur Shark",
             "Depthseeker Rey",
         },
-        ["FARM_LOC_SECRET_SACRIFICE"] = "Ancient Ruin",
+        ["FARM_LOC_SECRET_SACRIFICE"] = "Treasure Room",
 
         ["Minimum Rod"] = "Astral Rod",
     },
