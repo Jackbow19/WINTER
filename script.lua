@@ -105,8 +105,12 @@ _G.FishItConfig = _G.FishItConfig or {
     },
     ["Enchant"] = {
         ["Auto Enchant"] = true,
-        ["Roll Enchant"] = true, -- true = Roll until get TOP 1 enchant only (first in list)
-        ["Evolved Roll Enchant"] = true, -- true = Roll Evolved Stone until get ANY evolved-only enchant from list, then fallback to regular stone
+        ["Roll Enchant"] = false,
+        ["Evolved Roll Enchant"] = true,
+        ["Farm Until Enchant"] = true,
+        ["Enchant After X Stone"] = 25,
+   ["Enchant List"] = {
+     "SECRET Hunter",
         ["Enchant List"] = {
             "SECRET Hunter",
             "Mutation Hunter III",
