@@ -79,6 +79,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Weather List"] = {
             "Wind",
             "Storm",
+            "Cloudy",
         },
     },
     ["Potions"] = {
@@ -110,7 +111,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Farm Until Enchant"] = true,
         ["Enchant After X Stone"] = 25,
    ["Enchant List"] = {
-     "SECRET Hunter",
+     "Stormhunter II",
         },
         ["Second Enchant"] = false,
         ["Allowed Sacrifice"] = {
@@ -157,7 +158,7 @@ _G.FishItConfig = _G.FishItConfig or {
             ["Fisherman Island"] = {"Starter Rod"},
             ["Kohana Volcano"] = {"Grass Rod", "Midnight Rod"},
             ["Tropical Grove"] = {"Astral Rod"},
-            ["Underwater City"] = {"Element Rod", "Ghostfinn Rod", "Angler Rod", "Ares Rod"},
+            ["Ancient Ruin"] = {"Element Rod", "Ghostfinn Rod", "Angler Rod", "Ares Rod"},
         },
         ["Endgame"] = "",
     },
