@@ -14,6 +14,9 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Trade Timeout"] = 30,
         ["Auto Accept Trade"] = true,
         ["Auto Friend Request"] = true,
+
+        ["Auto Roll Ability"] = true,
+        ["Equip Ability"] = {"Divine","Singularity"},
     },
     ["Auto Trade"] = {
         ["Enabled"] = true,
