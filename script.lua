@@ -16,7 +16,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Auto Friend Request"] = true,
 
         ["Auto Roll Ability"] = true,
-        ["Equip Ability"] = {"Divine","Singularity"},
+        ["Equip Ability"] = "Divine",
     },
     ["Auto Trade"] = {
         ["Enabled"] = true,
