@@ -136,6 +136,7 @@ _G.FishItConfig = _G.FishItConfig or {
             "Depthseeker Rey",
         },
         ["Second Enchant List"] = {
+            "Stormhunter I",
             "Mutation Hunter II",
             "Prismatic I",
             "Cursed I",
