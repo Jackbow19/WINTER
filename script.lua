@@ -134,6 +134,7 @@ _G.FishItConfig = _G.FishItConfig or {
             "Great Whale",
             "Mosasaur Shark",
             "Depthseeker Rey",
+            "Deepsea Monster Axolotl",
         },
         ["Second Enchant List"] = {
             "Stormhunter I",
