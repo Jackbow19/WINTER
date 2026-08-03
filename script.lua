@@ -118,7 +118,7 @@ _G.FishItConfig = _G.FishItConfig or {
    ["Enchant List"] = {
      "Stormhunter II",
         },
-        ["Second Enchant"] = true,
+        ["Second Enchant"] = false,
         ["Allowed Sacrifice"] = {
             "Gladiator Shark",
             "Elshark Gran Maja",
