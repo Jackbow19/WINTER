@@ -140,7 +140,7 @@ _G.FishItConfig = _G.FishItConfig or {
             "Stormhunter I",
             "Mutation Hunter II",
             "Prismatic I",
-            "Cursed I",
+            "Leprechaun II",
             
         },
         ["Minimum Rod"] = "Element Rod",
