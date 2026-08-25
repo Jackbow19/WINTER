@@ -165,6 +165,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Endgame"] = "Element Rod",
     },
 
+    ["FPS Cap"] = 0,
     ["ExtremeFpsBoost"] = false,
     ["UltimatePerformance"] = false,
     ["Disable3DRender"] = false,
