@@ -167,8 +167,8 @@ _G.FishItConfig = _G.FishItConfig or {
 
     ["FPS Cap"] = 0,
     ["ExtremeFpsBoost"] = true,
-    ["UltimatePerformance"] = true,
-    ["Disable3DRender"] = true,
+    ["UltimatePerformance"] = false,
+    ["Disable3DRender"] = false,
     ["AutoRemovePlayer"] = true,
 
     ["AutoReconnect"] = false,
