@@ -104,8 +104,8 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Admin Event"] = false,
         ["Minimum Rod"] = "Ghostfinn Rod",
         ["Event List"] = {
-            ["Elemental Event"] = false,
-            ["Megalodon Hunt"] = true,
+            ["Elemental Event"] = true,
+            ["Megalodon Hunt"] = false,
         },
     },
     ["Enchant"] = {
