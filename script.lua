@@ -50,6 +50,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Auto Element Rod 2"] = true,
         ["Auto Diamond Rod"] = false,
         ["Auto Aetherion Bait"] = false,
+        ["Unlock Elemental Island"] = true,
         ["Unlock Ancient Ruin"] = false,
         ["Allowed Sacrifice"] = {
             "Gladiator Shark",
@@ -99,10 +100,11 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
     ["Event"] = {
-        ["Start Farm"] = true,
+        ["Start Farm"] = false,
+        ["Admin Event"] = false,
         ["Minimum Rod"] = "Ghostfinn Rod",
         ["Event List"] = {
-            ["Elemental Event"] = true,
+            ["Elemental Event"] = false,
             ["Hacker Event"] = false,
         },
     },
