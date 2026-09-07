@@ -51,6 +51,7 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Auto Diamond Rod"] = false,
         ["Auto Aetherion Bait"] = false,
         ["Unlock Elemental Island"] = true,
+        ["Unlock Elemental Min Rod"] = "Element Rod",
         ["Unlock Ancient Ruin"] = false,
         ["Allowed Sacrifice"] = {
             "Gladiator Shark",
@@ -96,7 +97,14 @@ _G.FishItConfig = _G.FishItConfig or {
         ["Auto Use"] = true,
         ["Minimum Rod"] = "Ghostfinn Rod",
         ["Buy List"] = {
-            ["Mutation Totem"] = 5,
+            ["Mutation Totem"] = 100,
+        },
+    },
+    ["Black Market"] = {
+        ["Auto Buy"] = true,
+        ["Buy List"] = {
+             ["Boombox Charm"] = 1,
+             ["Megalodon Hunt Potion"] = 2,
         },
     },
     ["Event"] = {
