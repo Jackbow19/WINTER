@@ -100,19 +100,6 @@ _G.FishItConfig = _G.FishItConfig or {
             ["Mutation Totem"] = 100,
         },
     },
-   ["Black Market"] = {
-    ["Auto Buy"] = true,
-    ["Minimum Rod"] = "Ghostfinn Rod",
-    ["Auto Throw Orb"] = true,
-    ["Buy List"] = {
-        ["Lightning Mutation Orb"]    = 1,
-        ["Holographic Mutation Orb"]  = 1, 
-        ["Midnight Mutation Orb"]     = 1, 
-        ["Gemstone Mutation Orb"]     = 1, 
-         ["Megalodon Hunt Potion"]     = 2,
-         ["Boombox Charm"]             = 1, 
-    },
-},
     ["Event"] = {
         ["Start Farm"] = true,
         ["Admin Event"] = false,
