@@ -101,11 +101,11 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
     ["Event"] = {
-        ["Start Farm"] = true,
+        ["Start Farm"] = false,
         ["Admin Event"] = false,
         ["Minimum Rod"] = "Element Rod",
         ["Event List"] = {
-            ["Elemental Event"] = true,
+            ["Elemental Event"] = false,
             ["Megalodon Hunt"] = false,
         },
     },
