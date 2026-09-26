@@ -47,10 +47,10 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Doing Quest"] = {
         ["Auto Ghostfinn Rod"] = true,
         ["Auto Element Rod"] = false,
-        ["Auto Element Rod 2"] = true,
+        ["Auto Element Rod 2"] = false,
         ["Auto Diamond Rod"] = false,
         ["Auto Aetherion Bait"] = false,
-        ["Unlock Elemental Island"] = true,
+        ["Unlock Elemental Island"] = false,
         ["Unlock Elemental Min Rod"] = "Element Rod",
         ["Unlock Ancient Ruin"] = false,
         ["Allowed Sacrifice"] = {
@@ -101,11 +101,11 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
     ["Event"] = {
-        ["Start Farm"] = true,
+        ["Start Farm"] = false,
         ["Admin Event"] = false,
         ["Minimum Rod"] = "Element Rod",
         ["Event List"] = {
-            ["Elemental Event"] = true,
+            ["Elemental Event"] = false,
             ["Megalodon Hunt"] = false,
         },
     },
