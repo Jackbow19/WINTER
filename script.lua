@@ -140,7 +140,7 @@ _G.FishItConfig = _G.FishItConfig or {
             "Stormhunter I",
             
         },
-        ["Minimum Rod"] = "Element Rod",
+        ["Minimum Rod"] = "Ghostfinn Rod",
     },
     ["Bait List"] = {
         ["Auto Buying"] = true,
