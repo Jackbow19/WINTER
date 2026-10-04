@@ -110,15 +110,15 @@ _G.FishItConfig = _G.FishItConfig or {
         },
     },
     ["Enchant"] = {
-        ["Auto Enchant"] = false,
+        ["Auto Enchant"] = true,
         ["Roll Enchant"] = false,
-        ["Evolved Roll Enchant"] = false,
-        ["Farm Until Enchant"] = false,
+        ["Evolved Roll Enchant"] = true,
+        ["Farm Until Enchant"] = true,
         ["Enchant After X Stone"] = 10,
    ["Enchant List"] = {
      "Stormhunter II",
         },
-        ["Second Enchant"] = false,
+        ["Second Enchant"] = true,
         ["Allowed Sacrifice"] = {
             "Gladiator Shark",
             "Elshark Gran Maja",
@@ -140,7 +140,7 @@ _G.FishItConfig = _G.FishItConfig or {
             "Stormhunter I",
             
         },
-        ["Minimum Rod"] = "Ghostfinn Rod",
+        ["Minimum Rod"] = "Element Rod",
     },
     ["Bait List"] = {
         ["Auto Buying"] = true,
