@@ -47,7 +47,7 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Doing Quest"] = {
         ["Auto Ghostfinn Rod"] = true,
         ["Auto Element Rod"] = false,
-        ["Auto Element Rod 2"] = true,
+        ["Auto Element Rod 2"] = false,
         ["Auto Diamond Rod"] = false,
         ["Auto Aetherion Bait"] = false,
         ["Unlock Elemental Island"] = false,
@@ -112,13 +112,13 @@ _G.FishItConfig = _G.FishItConfig or {
     ["Enchant"] = {
         ["Auto Enchant"] = true,
         ["Roll Enchant"] = false,
-        ["Evolved Roll Enchant"] = true,
-        ["Farm Until Enchant"] = true,
+        ["Evolved Roll Enchant"] = false,
+        ["Farm Until Enchant"] = false,
         ["Enchant After X Stone"] = 10,
    ["Enchant List"] = {
      "Stormhunter II",
         },
-        ["Second Enchant"] = true,
+        ["Second Enchant"] = false,
         ["Allowed Sacrifice"] = {
             "Gladiator Shark",
             "Elshark Gran Maja",
@@ -140,7 +140,7 @@ _G.FishItConfig = _G.FishItConfig or {
             "Stormhunter I",
             
         },
-        ["Minimum Rod"] = "Element Rod",
+        ["Minimum Rod"] = "Ghostfinn Rod",
     },
     ["Bait List"] = {
         ["Auto Buying"] = true,
